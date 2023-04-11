@@ -169,7 +169,7 @@ const options = {
   Jeśli nie ma więcej obrazów do załadowania, obserwator przestaje obserwować przycisk i informuje użytkownika, że ​​dotarł do końca wyników wyszukiwania.
   Jeśli podczas pobierania obrazów wystąpi błąd, użytkownik zostanie o tym powiadomiony komunikatem o błędzie.
   
-  !! Obserwator jest aktywowany przez usunięcie komentarza z funkcji searchForm.addEventListener, gdzie jest on dołączony do elementu loadMoreBtn. !!
+   Obserwator jest aktywowany przez usunięcie komentarza z funkcji searchForm.addEventListener, gdzie jest on dołączony do elementu loadMoreBtn. 
 */
 
 
