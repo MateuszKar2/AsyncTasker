@@ -27,9 +27,9 @@ let lightbox = new SimpleLightbox('.photo-card a', {
   Jeśli nie zostaną znalezione żadne obrazy, zostanie wyświetlony komunikat o błędzie za pomocą Notiflix.
   W przeciwnym razie renderuje listę obrazów i wyświetla przycisk ładowania więcej.
 */
-searchForm.addEventListener('submit', event => {
-  event.preventDefault();
-  const searchQuery = event.target.elements.searchQuery.value.trim(); // Extracts the search query value from the form
+searchForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const searchQuery = e.target.elements.searchQuery.value.trim(); // Wyodrębnia wartość zapytania wyszukiwania z formularza
   if (!searchQuery) {
     // Sprawdza, czy zapytanie wyszukiwania jest puste
     return;
@@ -38,8 +38,8 @@ searchForm.addEventListener('submit', event => {
   currentPage = 1; // Resetuje bieżący numer strony do 1
   currentQuery = searchQuery; // Ustawia bieżące zapytanie wyszukiwania na wyodrębnioną wartość
   gallery.innerHTML = ''; // Usuwa poprzednie wyniki wyszukiwania z kontenera galerii
-  fetchImages(searchQuery)
-    .then(data => {
+  await fetchImages(searchQuery)
+    .try(data => {
       if (data.hits.length === 0) {
         throw new Error('No images found');
       }
