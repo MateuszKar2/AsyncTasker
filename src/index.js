@@ -46,7 +46,6 @@ searchForm.addEventListener('submit', event => {
       renderList(data.hits); // Renderuje pobrane obrazy do kontenera galerii
       loadMoreBtn.classList.remove('is-hidden'); // Pokazuje przycisk ładowania więcej
 
-
       /*
         Ten kod sprawdza, czy łączna liczba działań zwróconych przez interfejs API jest większa niż bieżąca strona pomnożona przez 40.
         Jeśli tak, dołącza obserwatora do przycisku „Załaduj więcej”, aby wykryć, kiedy przycisk jest widoczny na ekranie.
